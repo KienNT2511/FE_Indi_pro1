@@ -3,7 +3,26 @@
     "allow": [
       "Bash(gh auth *)",
       "PowerShell(gh auth *)",
-      "PowerShell(git config *)"
+      "PowerShell(git config *)",
+      "Bash(git push *)",
+      "PowerShell(nvm version *)",
+      "Bash(nvm --version)",
+      "Bash(nvm version *)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(nvm current *)",
+      "PowerShell(yarn *)",
+      "PowerShell(Stop-Process *)",
+      "PowerShell(Start-Process \"http://localhost:3000\")",
+      "Bash(yarn install *)",
+      "Bash(yarn dev *)",
+      "Bash(yarn start *)",
+      "Bash(yarn tsc *)",
+      "Bash(del \"src\\\\components\\\\layout\\\\AuthLayout.tsx\" \"src\\\\components\\\\layout\\\\AppLayout.tsx\" \"src\\\\components\\\\layout\\\\Sidebar.tsx\" \"src\\\\components\\\\layout\\\\PrivateRoute.tsx\" \"src\\\\components\\\\layout\\\\PublicRoute.tsx\" \"src\\\\pages\\\\auth\\\\Login.tsx\" \"src\\\\pages\\\\auth\\\\Register.tsx\" \"src\\\\pages\\\\auth\\\\ChangePassword.tsx\" \"src\\\\pages\\\\dashboard\\\\Dashboard.tsx\")",
+      "Bash(Get-ChildItem -Path \"D:\\\\Quản_lý_đơn_hàng\\\\frontend\\\\src\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(Sort-Object FullName)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(yarn add *)"
     ]
   }
 }

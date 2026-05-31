@@ -1,26 +1,22 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
-import { AuthProvider } from './context/AuthContext'
-import PrivateRoute from './components/PrivateRoute'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import Dashboard from './pages/Dashboard'
+import { useEffect } from 'react'
+import { Provider } from 'react-redux'
+import { store } from './store'
+import { useAppDispatch } from './store/hooks'
+import { initAuth } from './store/slices/auth/authSlice'
+import AppRouter from './router'
+
+function AppBootstrap() {
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(initAuth())
+  }, [dispatch])
+  return <AppRouter />
+}
 
 export default function App() {
   return (
-    <AuthProvider>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route
-          path="/dashboard"
-          element={
-            <PrivateRoute>
-              <Dashboard />
-            </PrivateRoute>
-          }
-        />
-        <Route path="*" element={<Navigate to="/login" replace />} />
-      </Routes>
-    </AuthProvider>
+    <Provider store={store}>
+      <AppBootstrap />
+    </Provider>
   )
 }

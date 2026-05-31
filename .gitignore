@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Project docs (internal only)
+TECH_OVERVIEW.txt
+STRUCTURE.md
+CLAUDE.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

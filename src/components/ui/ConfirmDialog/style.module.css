@@ -1,0 +1,25 @@
+@reference "tailwindcss";
+
+.overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+}
+.backdrop {
+  @apply absolute inset-0 bg-black/40 backdrop-blur-sm;
+}
+.dialog {
+  @apply relative bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 flex flex-col gap-4;
+  animation: fadeUp 0.18s ease;
+}
+
+.iconWrapper {
+  @apply w-12 h-12 rounded-full flex items-center justify-center mx-auto;
+}
+.iconDanger  { @apply bg-red-50;    }
+.iconPrimary { @apply bg-indigo-50; }
+.iconTextDanger  { @apply text-red-500;    }
+.iconTextPrimary { @apply text-indigo-500; }
+
+.content     { @apply text-center; }
+.title       { @apply text-base font-bold text-gray-900; }
+.description { @apply text-sm text-gray-500 mt-1; }
+.actions     { @apply flex gap-3 mt-1; }

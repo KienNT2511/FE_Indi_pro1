@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+.form {
+  @apply flex flex-col gap-4;
+}
+.field {
+  @apply flex flex-col gap-1.5;
+}
+.label {
+  @apply text-sm font-semibold text-gray-700;
+}
+.labelOptional {
+  @apply font-normal text-gray-400 text-xs;
+}
+.mismatch {
+  @apply text-xs text-red-500;
+}

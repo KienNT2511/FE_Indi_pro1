@@ -1,0 +1,11 @@
+@reference "tailwindcss";
+
+.alert {
+  @apply flex items-center gap-2 px-4 py-3 rounded-xl border text-sm;
+}
+
+.error   { @apply bg-red-50   border-red-200   text-red-600;   }
+.success { @apply bg-green-50 border-green-200 text-green-600; }
+.info    { @apply bg-blue-50  border-blue-200  text-blue-600;  }
+
+.icon { @apply shrink-0; }

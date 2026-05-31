@@ -1,72 +1,32 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react'
-import api from '../api/axios'
+import { authService } from '../services/auth/auth.service'
+import { useAppDispatch, useAppSelector } from '../store/hooks'
+import { setUser } from '../store/slices/auth/authSlice'
 
-interface User {
-  id: string
-  email: string
-  username?: string
-}
-
-interface AuthContextType {
-  user: User | null
-  loading: boolean
-  login: (email: string, password: string) => Promise<void>
-  register: (email: string, password: string, username?: string) => Promise<void>
-  logout: () => Promise<void>
-}
-
-const AuthContext = createContext<AuthContextType | null>(null)
-
-export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const token = localStorage.getItem('accessToken')
-    if (token) {
-      api.get('/auth/me')
-        .then((res) => setUser(res.data))
-        .catch(() => {
-          localStorage.removeItem('accessToken')
-          localStorage.removeItem('refreshToken')
-        })
-        .finally(() => setLoading(false))
-    } else {
-      setLoading(false)
-    }
-  }, [])
+export function useAuth() {
+  const dispatch = useAppDispatch()
+  const { user, loading } = useAppSelector(state => state.auth)
 
   const login = async (email: string, password: string) => {
-    const res = await api.post('/auth/login', { email, password })
-    localStorage.setItem('accessToken', res.data.accessToken)
-    localStorage.setItem('refreshToken', res.data.refreshToken)
-    const profile = await api.get('/auth/me')
-    setUser(profile.data)
+    const tokens = await authService.login({ email, password })
+    localStorage.setItem('accessToken', tokens.accessToken)
+    localStorage.setItem('refreshToken', tokens.refreshToken)
+    const profile = await authService.me()
+    dispatch(setUser(profile))
   }
 
-  const register = async (email: string, password: string, username?: string) => {
-    await api.post('/auth/register', { email, password, username })
+  const register = async (email: string, password: string, name?: string) => {
+    await authService.register({ email, password, name })
   }
 
   const logout = async () => {
     try {
-      await api.post('/auth/logout')
+      await authService.logout()
     } finally {
       localStorage.removeItem('accessToken')
       localStorage.removeItem('refreshToken')
-      setUser(null)
+      dispatch(setUser(null))
     }
   }
 
-  return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
-      {children}
-    </AuthContext.Provider>
-  )
-}
-
-export function useAuth() {
-  const ctx = useContext(AuthContext)
-  if (!ctx) throw new Error('useAuth must be used within AuthProvider')
-  return ctx
+  return { user, loading, login, register, logout }
 }

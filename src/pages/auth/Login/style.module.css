@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+.form {
+  @apply flex flex-col gap-4;
+}
+.field {
+  @apply flex flex-col gap-1.5;
+}
+.label {
+  @apply text-sm font-semibold text-gray-700;
+}
+.labelRow {
+  @apply flex justify-between items-center;
+}
+.forgotPassword {
+  @apply text-xs text-gray-400;
+}

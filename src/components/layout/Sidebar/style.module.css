@@ -1,0 +1,55 @@
+@reference "tailwindcss";
+
+.aside {
+  @apply w-60 shrink-0 h-screen bg-white border-r border-gray-100 flex flex-col;
+}
+
+.logoArea {
+  @apply flex items-center gap-2.5 px-5 h-16 border-b border-gray-100;
+}
+.logoIcon {
+  @apply w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shrink-0;
+}
+.logoText {
+  @apply font-bold text-gray-900 tracking-tight;
+}
+
+.nav {
+  @apply flex-1 px-3 py-4 flex flex-col gap-1 overflow-y-auto;
+}
+.navItem {
+  @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors;
+}
+.navItemActive {
+  @apply bg-indigo-50 text-indigo-600;
+}
+.navItemIdle {
+  @apply text-gray-600 hover:bg-gray-50 hover:text-gray-900;
+}
+.navIconActive {
+  @apply text-indigo-500;
+}
+.navIconIdle {
+  @apply text-gray-400;
+}
+
+.langArea {
+  @apply px-4 pb-3;
+}
+
+.userArea {
+  @apply px-3 py-4 border-t border-gray-100;
+}
+.userInfo {
+  @apply flex items-center gap-3 px-3 py-2 mb-1;
+}
+.userAvatar {
+  @apply w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white text-xs font-bold shrink-0;
+}
+.userEmailText {
+  @apply text-sm font-medium text-gray-900 truncate;
+}
+
+.logoutBtn {
+  @apply w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-500 hover:bg-red-50 hover:text-red-500 transition-colors;
+}

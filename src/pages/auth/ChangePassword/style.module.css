@@ -1,0 +1,84 @@
+@reference "tailwindcss";
+
+.wrapper {
+  @apply p-8;
+}
+.pageHeader {
+  @apply mb-6;
+}
+.pageTitle {
+  @apply text-2xl font-bold text-gray-900;
+}
+.pageSubtitle {
+  @apply text-sm text-gray-500 mt-1;
+}
+
+.grid {
+  @apply grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-4xl;
+}
+
+.formCard {
+  @apply lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden;
+}
+.formCardHeader {
+  @apply px-6 py-4 border-b border-gray-100;
+}
+.formCardTitle {
+  @apply text-sm font-semibold text-gray-700;
+}
+.formBody {
+  @apply p-6 flex flex-col gap-5;
+}
+.field {
+  @apply flex flex-col gap-1.5;
+}
+.label {
+  @apply text-sm font-semibold text-gray-700;
+}
+.divider {
+  @apply border-t border-dashed border-gray-200;
+}
+.formFooter {
+  @apply flex justify-end pt-1;
+}
+.mismatch {
+  @apply text-xs text-red-500 flex items-center gap-1;
+}
+
+.tipsCard {
+  @apply bg-indigo-50 rounded-2xl border border-indigo-100 p-6 h-fit;
+}
+.tipsHeader {
+  @apply flex items-center gap-2 mb-4;
+}
+.tipsIconBox {
+  @apply w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center;
+}
+.tipsTitle {
+  @apply text-sm font-semibold text-indigo-700;
+}
+.tipsList {
+  @apply flex flex-col gap-2.5;
+}
+.tipItem {
+  @apply flex items-start gap-2 text-xs text-indigo-600;
+}
+
+.strengthWrapper {
+  @apply flex flex-col gap-2 mt-1;
+}
+.strengthBars {
+  @apply flex gap-1;
+}
+.strengthBar {
+  @apply h-1 flex-1 rounded-full transition-all;
+}
+.strengthMeta {
+  @apply flex items-center justify-between;
+}
+.strengthChecks {
+  @apply flex flex-wrap gap-x-3 gap-y-1;
+}
+.strengthCheck {
+  @apply text-xs flex items-center gap-1;
+}

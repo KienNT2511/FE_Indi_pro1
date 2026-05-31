@@ -1,0 +1,21 @@
+@reference "tailwindcss";
+
+.track {
+  @apply relative flex items-center rounded-full p-1 cursor-pointer select-none;
+}
+.trackLight { @apply bg-gray-100; }
+.trackDark  { @apply bg-white/15 backdrop-blur-sm; }
+
+.thumb {
+  @apply absolute top-1 bottom-1 rounded-full transition-transform duration-300 ease-in-out;
+}
+.thumbLight { @apply bg-white shadow-sm; }
+.thumbDark  { @apply bg-white/30 shadow; }
+
+.option {
+  @apply relative z-10 flex items-center justify-center gap-1.5 flex-1 py-1.5 rounded-full text-xs font-semibold transition-colors duration-200;
+}
+.optionActiveLight { @apply text-gray-900; }
+.optionIdleLight   { @apply text-gray-400; }
+.optionActiveDark  { @apply text-white; }
+.optionIdleDark    { @apply text-white/50; }
