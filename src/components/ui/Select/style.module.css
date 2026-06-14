@@ -1,0 +1,26 @@
+@reference "tailwindcss";
+
+.wrapper {
+  @apply relative flex items-center w-full;
+}
+
+.startIcon {
+  @apply absolute left-3 pointer-events-none text-gray-400;
+}
+.chevron {
+  @apply absolute right-3 pointer-events-none text-gray-400;
+}
+
+.select {
+  @apply w-full py-3 border-[1.5px] rounded-xl text-sm text-gray-700 bg-white shadow-sm outline-none transition-all appearance-none cursor-pointer;
+}
+.selectDefault {
+  @apply border-gray-200 focus:border-indigo-400;
+  &:focus { box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.12); }
+}
+.selectError {
+  @apply border-red-400;
+  &:focus { box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.15); }
+}
+.hasStart { @apply pl-10 pr-9; }
+.noStart  { @apply pl-3 pr-9; }

@@ -1,6 +1,6 @@
 import { type ButtonHTMLAttributes, type ReactNode } from 'react'
 
-export type Variant = 'primary' | 'secondary' | 'danger'
+export type Variant = 'primary' | 'secondary' | 'danger' | 'outline'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant

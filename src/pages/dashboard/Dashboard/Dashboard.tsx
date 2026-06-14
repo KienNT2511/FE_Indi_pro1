@@ -1,9 +1,7 @@
-import { useAuth } from '../../../context/AuthContext'
 import { useLanguage } from '../../../context/LanguageContext'
 import styles from './style.module.css'
 
 export default function Dashboard() {
-  const { user } = useAuth()
   const { t } = useLanguage()
 
   return (
@@ -14,17 +12,7 @@ export default function Dashboard() {
       </div>
 
       <div className={styles.card}>
-        <h2 className={styles.cardSectionTitle}>{t.dashboard.accountInfo}</h2>
-        <div className={styles.list}>
-          <div className={styles.listRow}>
-            <span className={styles.listLabel}>{t.dashboard.id}</span>
-            <span className={`${styles.listValue} break-all`}>{user?.sub}</span>
-          </div>
-          <div className={styles.listRow}>
-            <span className={styles.listLabel}>{t.dashboard.email}</span>
-            <span className={styles.listValue}>{user?.email}</span>
-          </div>
-        </div>
+        <p className={styles.welcome}>{t.dashboard.welcome}</p>
       </div>
     </div>
   )

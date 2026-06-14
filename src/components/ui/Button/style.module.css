@@ -13,6 +13,9 @@
 .danger {
   @apply bg-red-500 text-white hover:bg-red-600;
 }
+.outline {
+  @apply bg-white border-[1.5px] border-gray-200 text-gray-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50/50 active:scale-[0.99];
+}
 
 .spinner {
   @apply w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin;

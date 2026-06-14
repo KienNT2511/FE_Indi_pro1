@@ -5,6 +5,7 @@ const variantClass: Record<Variant, string> = {
   primary:   styles.primary,
   secondary: styles.secondary,
   danger:    styles.danger,
+  outline:   styles.outline,
 }
 
 export default function Button({

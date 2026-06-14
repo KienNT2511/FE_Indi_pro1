@@ -1,0 +1,62 @@
+@reference "tailwindcss";
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden;
+}
+.table {
+  @apply w-full border-collapse text-sm;
+}
+
+/* ── Header ───────────────────────────────────────────────────── */
+.th {
+  @apply font-semibold text-gray-500 uppercase text-xs tracking-wide px-5 py-3.5 border-b border-gray-200 bg-gray-50;
+}
+.thSortable {
+  @apply cursor-pointer select-none hover:text-gray-700 transition-colors;
+}
+.thInner {
+  @apply inline-flex items-center gap-1.5;
+}
+.sortIcon {
+  @apply text-gray-300 transition-transform;
+}
+.sortActive {
+  @apply text-indigo-500;
+}
+
+/* ── Hàng search theo cột ─────────────────────────────────────── */
+.filterRow {
+  @apply bg-gray-50/60;
+}
+.filterCell {
+  @apply px-3 py-2 border-b border-gray-100 align-middle;
+}
+.filterWrap {
+  @apply relative flex items-center;
+}
+.filterIcon {
+  @apply absolute left-2.5 pointer-events-none text-gray-400;
+}
+.filterInput {
+  @apply w-full py-1.5 pl-8 pr-2 text-xs font-normal text-gray-700 bg-white border border-gray-200 rounded-lg outline-none transition-all placeholder:text-gray-300 normal-case tracking-normal;
+}
+.filterInput:focus {
+  @apply border-indigo-400;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ── Thân bảng ────────────────────────────────────────────────── */
+.row {
+  @apply border-b border-gray-100 hover:bg-indigo-50/40 transition-colors last:border-b-0;
+}
+.td {
+  @apply px-5 py-3.5 text-gray-700 align-middle;
+}
+.stateCell {
+  @apply px-5 py-12 text-center text-gray-400;
+}
+
+/* ── Căn lề ───────────────────────────────────────────────────── */
+.left   { @apply text-left; }
+.right  { @apply text-right; }
+.center { @apply text-center; }

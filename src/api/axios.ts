@@ -1,7 +1,12 @@
 import axios from 'axios'
 
+// Mặc định gọi tương đối '/api/v1' (dùng khi frontend & backend cùng origin,
+// hoặc host frontend có rewrite /api → backend). Khi deploy tách origin,
+// đặt VITE_API_URL=https://<backend>/api/v1 lúc build.
+const API_BASE = import.meta.env.VITE_API_URL ?? '/api/v1'
+
 const api = axios.create({
-  baseURL: '/api/v1',
+  baseURL: API_BASE,
 })
 
 // ── JWT helpers ──────────────────────────────────────────────────
@@ -36,7 +41,7 @@ const refreshAccessToken = async (): Promise<string> => {
     if (!refreshToken) throw new Error('No refresh token')
 
     const res = await axios.post(
-      '/api/v1/auth/refresh',
+      `${API_BASE}/auth/refresh`,
       {},
       { headers: { Authorization: `Bearer ${refreshToken}` } },
     )

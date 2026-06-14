@@ -22,7 +22,12 @@
       "Bash(Select-Object FullName)",
       "Bash(Sort-Object FullName)",
       "Bash(Format-Table -AutoSize)",
-      "Bash(yarn add *)"
+      "Bash(yarn add *)",
+      "PowerShell(Get-ChildItem \"D:\\\\Quản_lý_đơn_hàng\\\\backend\\\\src\" -Recurse -Directory | Where-Object { $_.Name -match \"product\" } | Select-Object FullName)",
+      "PowerShell(Test-NetConnection *)",
+      "Bash(break)",
+      "Bash(curl -s -o /dev/null -w \"orders=%{http_code}\\\\n\" http://localhost:3001/api/v1/orders)",
+      "Bash(curl -s -o /dev/null -w \"customers=%{http_code}\\\\n\" http://localhost:3001/api/v1/customers)"
     ]
   }
 }
